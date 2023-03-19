@@ -63,7 +63,7 @@ data.then(data=>{
    // navigation i.e showing current and total page number
     
     totalPage.innerHTML = data.length/10;
-    currentPage.innerHTML = (this.firstIndex/5)+1
+    currentPage.innerHTML = (this.firstIndex/10)+1
     
     //display table
     tbody.innerHTML = ''
