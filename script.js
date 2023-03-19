@@ -23,7 +23,7 @@ constructor(){
     
 // generate buttons
 data.then(data=>{
-var numOfBtn = data.length/5;
+var numOfBtn = data.length/10;
 for(let i = 0 ; i < numOfBtn ; i++){
    var pageBtn = btn()
    pageBtn.setAttribute('onclick',`page.setPage(${i})`)
@@ -62,12 +62,12 @@ data.then(data=>{
     // console.log(data.length)
    // navigation i.e showing current and total page number
     
-    totalPage.innerHTML = data.length/5;
+    totalPage.innerHTML = data.length/10;
     currentPage.innerHTML = (this.firstIndex/5)+1
     
     //display table
     tbody.innerHTML = ''
-    for(let i = this.firstIndex ; i < this.firstIndex+5; i++){
+    for(let i = this.firstIndex ; i < this.firstIndex+10; i++){
     
         // console.log(data[i].id)
         var row = tr()
@@ -86,25 +86,25 @@ this.buttons()
 // to change next page
 next(){
    
-    this.firstIndex = this.firstIndex + 5
+    this.firstIndex = this.firstIndex + 10
     this.display()
    
 }
 
 // to change previous page
 prev(){
-    this.firstIndex = this.firstIndex - 5
+    this.firstIndex = this.firstIndex - 10
     this.display()
 }
 
 // to set the page number
 setPage(num){
-this.firstIndex = num *5
+this.firstIndex = num *10
 this.display()
 }
 lastPage(){
     data.then(data=>{
-        this.setPage((data.length/5)-1)
+        this.setPage((data.length/10)-1)
     }).catch(err => console.log(err))
 }
 }
